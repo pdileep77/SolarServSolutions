@@ -8,7 +8,8 @@
       "Bash(npx prisma *)",
       "Bash(npx tsc *)",
       "Bash(npx next *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(node -e \"const p = require\\('@prisma/client'\\); console.log\\(Object.keys\\(p\\).filter\\(k => k.match\\(/Service|User|Solar/\\)\\).slice\\(0,10\\)\\)\")"
     ]
   }
 }

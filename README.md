@@ -36,11 +36,54 @@ A full-stack B2C solar panel maintenance and service scheduling platform. Homeow
 
 ---
 
+## Repository Structure
+
+```
+SolarServSolutions/
+├── solarserv-app/                        # Next.js application
+│   ├── app/
+│   │   ├── (homeowner)/                  # Homeowner portal routes
+│   │   │   ├── dashboard/
+│   │   │   ├── assets/
+│   │   │   ├── book/
+│   │   │   ├── history/
+│   │   │   └── notifications/
+│   │   ├── (admin)/                      # Admin/operator dashboard routes
+│   │   │   └── admin/
+│   │   │       ├── dashboard/
+│   │   │       ├── map/
+│   │   │       ├── requests/
+│   │   │       └── users/
+│   │   ├── api/                          # API route handlers
+│   │   │   ├── assets/
+│   │   │   ├── bookings/
+│   │   │   ├── notifications/
+│   │   │   ├── admin/
+│   │   │   └── webhooks/clerk/
+│   │   ├── sign-in/
+│   │   └── sign-up/
+│   ├── components/
+│   │   ├── admin/                        # AdminSidebar
+│   │   ├── homeowner/                    # HomeNav
+│   │   └── ui/                           # StatusBadge
+│   ├── lib/
+│   │   ├── prisma.ts                     # Prisma client singleton (Neon adapter)
+│   │   └── auth.ts                       # Clerk auth helpers + lazy user sync
+│   ├── prisma/
+│   │   └── schema.prisma                 # Database schema
+│   └── proxy.ts                          # Clerk middleware + role-based routing
+├── stitch_solarserv_service_platform/    # UI design assets (HTML mockups)
+└── Solar_Service_Solution_Presentation.pdf
+```
+
+---
+
 ## Getting Started
 
 ### 1. Install dependencies
 
 ```bash
+cd solarserv-app
 npm install
 ```
 
@@ -87,45 +130,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
-
----
-
-## Project Structure
-
-```
-solarserv-app/
-├── app/
-│   ├── (homeowner)/          # Homeowner portal routes
-│   │   ├── dashboard/
-│   │   ├── assets/
-│   │   ├── book/
-│   │   ├── history/
-│   │   └── notifications/
-│   ├── (admin)/              # Admin/operator dashboard routes
-│   │   └── admin/
-│   │       ├── dashboard/
-│   │       ├── map/
-│   │       ├── requests/
-│   │       └── users/
-│   ├── api/                  # API route handlers
-│   │   ├── assets/
-│   │   ├── bookings/
-│   │   ├── notifications/
-│   │   ├── admin/
-│   │   └── webhooks/clerk/
-│   ├── sign-in/
-│   └── sign-up/
-├── components/
-│   ├── admin/                # AdminSidebar
-│   ├── homeowner/            # HomeNav
-│   └── ui/                   # StatusBadge
-├── lib/
-│   ├── prisma.ts             # Prisma client singleton (Neon adapter)
-│   └── auth.ts               # Clerk auth helpers + lazy user sync
-├── prisma/
-│   └── schema.prisma         # Database schema
-└── proxy.ts                  # Clerk middleware + role-based routing
-```
 
 ---
 
@@ -177,6 +181,6 @@ The webhook syncs new Clerk users into the Neon database automatically.
 5. Deploy — `prisma generate` runs automatically via the `postinstall` script
 
 ```bash
-# Build command (auto-configured)
+# Build command (auto-configured in package.json)
 prisma generate && next build
 ```
