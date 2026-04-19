@@ -150,9 +150,9 @@ export default async function AdminDashboardPage() {
             </p>
           ) : (
             <div className="space-y-3">
-              {recentRequests.map((req) => (
+              {recentRequests.map((request) => (
                 <div
-                  key={req.id}
+                  key={request.id}
                   className="flex items-center gap-3 py-3"
                   style={{ borderBottom: '1px solid var(--color-surface-container)' }}
                 >
@@ -160,9 +160,9 @@ export default async function AdminDashboardPage() {
                     className="w-9 h-9 rounded-xl flex items-center justify-center text-sm shrink-0"
                     style={{ background: 'var(--color-surface-container-low)' }}
                   >
-                    {req.serviceType === 'cleaning'
+                    {request.serviceType === 'cleaning'
                       ? '🧹'
-                      : req.serviceType === 'inspection'
+                      : request.serviceType === 'inspection'
                       ? '🔍'
                       : '🔧'}
                   </div>
@@ -171,37 +171,37 @@ export default async function AdminDashboardPage() {
                       className="text-sm font-semibold truncate"
                       style={{ color: 'var(--color-on-surface)' }}
                     >
-                      {req.user.name}
+                      {request.user.name}
                     </p>
                     <p
                       className="text-xs capitalize"
                       style={{ color: 'var(--color-on-surface-variant)' }}
                     >
-                      {req.serviceType} · {req.asset.panelBrand}
+                      {request.serviceType} · {request.asset.panelBrand}
                     </p>
                   </div>
                   <span
                     className="text-xs font-bold px-2 py-1 rounded-full shrink-0"
                     style={{
                       background:
-                        req.status === 'Completed'
+                        request.status === 'Completed'
                           ? 'rgba(0,155,107,0.12)'
-                          : req.status === 'InProgress'
+                          : request.status === 'InProgress'
                           ? 'rgba(29,111,168,0.12)'
-                          : req.status === 'Cancelled'
+                          : request.status === 'Cancelled'
                           ? 'rgba(186,26,26,0.1)'
                           : 'rgba(245,158,11,0.12)',
                       color:
-                        req.status === 'Completed'
+                        request.status === 'Completed'
                           ? '#009b6b'
-                          : req.status === 'InProgress'
+                          : request.status === 'InProgress'
                           ? '#1d6fa8'
-                          : req.status === 'Cancelled'
+                          : request.status === 'Cancelled'
                           ? '#ba1a1a'
                           : '#b45309',
                     }}
                   >
-                    {req.status}
+                    {request.status}
                   </span>
                 </div>
               ))}
