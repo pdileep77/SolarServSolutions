@@ -1,9 +1,11 @@
 export const dynamic = 'force-dynamic'
 
 import { prisma } from '@/lib/prisma'
-import type { ServiceRequest, User, SolarAsset } from '@prisma/client'
+import type { Prisma } from '@prisma/client'
 
-type RecentRequest = ServiceRequest & { user: User; asset: SolarAsset }
+type RecentRequest = Prisma.ServiceRequestGetPayload<{
+  include: { user: true; asset: true }
+}>
 
 export default async function AdminDashboardPage() {
   const [totalUsers, totalAssets, openRequests, completedThisMonth] =
