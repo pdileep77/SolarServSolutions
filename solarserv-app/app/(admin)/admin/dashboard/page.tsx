@@ -1,34 +1,33 @@
 export const dynamic = 'force-dynamic'
 
 import { prisma } from '@/lib/prisma'
+import type { ServiceRequest, User, SolarAsset } from '@prisma/client'
+
+type RecentRequest = ServiceRequest & { user: User; asset: SolarAsset }
 
 export default async function AdminDashboardPage() {
-  const [
-    totalUsers,
-    totalAssets,
-    openRequests,
-    completedThisMonth,
-    recentRequests,
-  ] = await Promise.all([
-    prisma.user.count(),
-    prisma.solarAsset.count(),
-    prisma.serviceRequest.count({
-      where: { status: { in: ['Scheduled', 'InProgress'] } },
-    }),
-    prisma.serviceRequest.count({
-      where: {
-        status: 'Completed',
-        updatedAt: {
-          gte: new Date(new Date().getFullYear(), new Date().getMonth(), 1),
+  const [totalUsers, totalAssets, openRequests, completedThisMonth] =
+    await Promise.all([
+      prisma.user.count(),
+      prisma.solarAsset.count(),
+      prisma.serviceRequest.count({
+        where: { status: { in: ['Scheduled', 'InProgress'] } },
+      }),
+      prisma.serviceRequest.count({
+        where: {
+          status: 'Completed',
+          updatedAt: {
+            gte: new Date(new Date().getFullYear(), new Date().getMonth(), 1),
+          },
         },
-      },
-    }),
-    prisma.serviceRequest.findMany({
-      take: 5,
-      orderBy: { createdAt: 'desc' },
-      include: { user: true, asset: true },
-    }),
-  ])
+      }),
+    ])
+
+  const recentRequests: RecentRequest[] = await prisma.serviceRequest.findMany({
+    take: 5,
+    orderBy: { createdAt: 'desc' },
+    include: { user: true, asset: true },
+  })
 
   const kpis = [
     { label: 'Total Users', value: totalUsers, icon: '👥', color: '#1d6fa8' },
