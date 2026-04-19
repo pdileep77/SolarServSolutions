@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#384667",
+                    "surface-bright": "#f8f9ff",
+                    "background": "#f8f9ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-container-high": "#dce9ff",
+                    "outline": "#75777e",
+                    "on-secondary-container": "#684000",
+                    "on-tertiary-container": "#009b6b",
+                    "surface-container-low": "#eff4ff",
+                    "on-surface-variant": "#45474e",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "tertiary": "#000b05",
+                    "on-primary-container": "#7887ab",
+                    "inverse-primary": "#b7c6ed",
+                    "inverse-surface": "#213145",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#0b1c30",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container-highest": "#d3e4fe",
+                    "outline-variant": "#c5c6ce",
+                    "tertiary-container": "#002617",
+                    "on-tertiary-fixed": "#002113",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-primary": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-primary-fixed": "#0a1b39",
+                    "on-background": "#0b1c30",
+                    "surface-tint": "#505e80",
+                    "secondary-fixed": "#ffddb8",
+                    "primary-container": "#0f1f3d",
+                    "on-secondary-fixed": "#2a1700",
+                    "on-secondary-fixed-variant": "#653e00",
+                    "secondary-container": "#fea619",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "primary-fixed-dim": "#b7c6ed",
+                    "primary": "#00071b",
+                    "surface-container": "#e5eeff",
+                    "primary-fixed": "#d8e2ff",
+                    "secondary": "#855300",
+                    "tertiary-fixed": "#6ffbbe",
+                    "tertiary-fixed-dim": "#4edea3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl flex items-center justify-between px-6 h-16 w-full shadow-sm">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0F1F3D]" data-icon="menu">menu</span>
+<span class="text-lg font-extrabold tracking-[0.05em] uppercase text-[#0F1F3D]">SOLARSERV</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0F1F3D]" data-icon="search">search</span>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Professional headshot of a person with a friendly expression in clean modern lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIyQOvKR4LHIzIcBLKE9tQYCyueDV3Ee9vAy2PCNIJWHJdYAGVsaF6hqWydNSvD85-LfIt1Wc4iWTZ0YpfUJ2PlW7j-FX5GNIGfW7vc92vH1zFfBLDAQhBXIJ6z4nd_di-cDbytknSsvkrtSDXxt2OwCnIaU2KJlVnqLDaLglYRX-ht06sGTcxSiV_YWETD9UZSfoCwSBiqbII-eQoI8K5BS6_U1NrBR0jPWg8OuQ7lC5nLdBINv_7ehTdBufmzef81k5PUCiKEK8"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-4xl mx-auto">
+<!-- Editorial Header Section -->
+<section class="mb-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-secondary mb-2 block">System Pulse</span>
+<h1 class="text-5xl font-extrabold tracking-tighter text-primary-container">Notifications</h1>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container-highest px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all hover:bg-surface-container-high">Clear All</button>
+<button class="bg-primary-container text-white px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider shadow-lg">Settings</button>
+</div>
+</div>
+<!-- Horizontal Filter Scroll -->
+<div class="flex gap-4 mt-8 overflow-x-auto pb-4 scrollbar-hide no-scrollbar">
+<button class="flex-none px-6 py-2 bg-secondary-container text-on-secondary-fixed font-bold text-xs uppercase tracking-widest rounded-full">All Activity</button>
+<button class="flex-none px-6 py-2 bg-surface-container text-on-surface-variant font-semibold text-xs uppercase tracking-widest rounded-full hover:bg-surface-container-high transition-colors">Bookings</button>
+<button class="flex-none px-6 py-2 bg-surface-container text-on-surface-variant font-semibold text-xs uppercase tracking-widest rounded-full hover:bg-surface-container-high transition-colors">Technical</button>
+<button class="flex-none px-6 py-2 bg-surface-container text-on-surface-variant font-semibold text-xs uppercase tracking-widest rounded-full hover:bg-surface-container-high transition-colors">Efficiency</button>
+</div>
+</section>
+<!-- Notification List -->
+<div class="space-y-6">
+<!-- Notification Card: Unread/Technician -->
+<div class="relative group bg-surface-container-low p-6 rounded-3xl transition-all duration-300 hover:bg-surface-container">
+<div class="absolute top-6 right-6 flex items-center gap-2">
+<span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest">Now</span>
+<div class="w-2.5 h-2.5 bg-secondary-container rounded-full shadow-[0_0_8px_rgba(245,158,11,0.5)]"></div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-14 h-14 flex-none bg-surface-container-highest rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="engineering">engineering</span>
+</div>
+<div class="flex-1 pr-12">
+<h3 class="text-lg font-bold text-on-surface leading-tight mb-1">Technician En-route</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-3">Technician Sarah is currently 10 minutes away from your location for the scheduled panel optimization.</p>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-2">
+<img alt="Sarah" class="w-6 h-6 rounded-full border-2 border-surface-container-low object-cover" data-alt="Portrait of a female technician in professional work attire with a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTJbNekHu3edvAOZxH1K_sXRsKTmuW6LG9vKo3PvHf-xrtWhRT3LrAdiafbDa6ee-tTb4Mr5p4nyJEzFQ7LFLWvrOY888QxgQtBOKcgi_uxG6OvMhUKxjBVMcllyedIMx7X95-VmKGEAxX_WASoF5WNWpRFhc2E4dtperQlKMV0_eKvlj35W6HLtsxut6Gj21zdeafES3RBLPGXq9iVO2LJcxmIlAAzG1hpwvmizEjJSnbwwf03P8N_WK7Yg5vhsFjgm0g7giPIHE"/>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary">View Live Map</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Card: Maintenance -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl transition-all duration-300 hover:bg-surface-container-low shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-tertiary-fixed-dim/20 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="solar_power">solar_power</span>
+</div>
+<h3 class="font-bold text-on-surface">Efficiency Alert</h3>
+</div>
+<span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest">2h ago</span>
+</div>
+<div class="pl-13 ml-13 border-l-2 border-surface-container py-1">
+<p class="text-on-surface-variant text-sm leading-relaxed ml-1">Generation output increased by 15% following your morning panel cleaning. Impact: +2.4kWh today.</p>
+</div>
+</div>
+<!-- Notification Card: Booking Confirmation -->
+<div class="bg-surface-container-low p-6 rounded-3xl transition-all duration-300 hover:bg-surface-container">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-fixed-dim/30 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" data-icon="calendar_today">calendar_today</span>
+</div>
+<h3 class="font-bold text-on-surface">Booking Confirmed</h3>
+</div>
+<span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest">Yesterday</span>
+</div>
+<div class="ml-13">
+<p class="text-on-surface-variant text-sm leading-relaxed">Your annual system integrity check is scheduled for Friday, Oct 24th at 09:00 AM.</p>
+</div>
+</div>
+<!-- Notification Card: System Message -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl transition-all duration-300 hover:bg-surface-container-low shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-outline" data-icon="info">info</span>
+</div>
+<h3 class="font-bold text-on-surface">Cloud Sync Complete</h3>
+</div>
+<span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest">Oct 20</span>
+</div>
+<div class="ml-13">
+<p class="text-on-surface-variant text-sm leading-relaxed">All local asset performance data has been synchronized with the SolarServ cloud servers.</p>
+</div>
+</div>
+</div>
+<!-- Pagination/Footer Context -->
+<div class="mt-12 mb-12 text-center">
+<button class="text-on-primary-container text-[10px] font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">Show Older Notifications</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl border-none bg-white shadow-[0_-4px_20px_rgba(15,31,61,0.05)] flex justify-around items-center w-full px-2 py-3 pb-safe">
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-2 hover:text-[#F59E0B] transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-2 hover:text-[#F59E0B] transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="solar_power">solar_power</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold">Assets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-2 hover:text-[#F59E0B] transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_add_on">calendar_add_on</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold">Book</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#F59E0B] bg-[#F59E0B]/10 rounded-xl px-4 py-2 active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold">History</span>
+</a>
+</nav>
+<!-- FAB Overlay (Highly Contextual) -->
+<div class="fixed bottom-24 right-6 md:right-12 z-40">
+<button class="bg-primary-container text-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-2xl transition-transform active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</body></html>

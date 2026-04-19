@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SolarServ Operator Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#384667",
+                        "surface-bright": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-high": "#dce9ff",
+                        "outline": "#75777e",
+                        "on-secondary-container": "#684000",
+                        "on-tertiary-container": "#009b6b",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface-variant": "#45474e",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary": "#000b05",
+                        "on-primary-container": "#7887ab",
+                        "inverse-primary": "#b7c6ed",
+                        "inverse-surface": "#213145",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#0b1c30",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline-variant": "#c5c6ce",
+                        "tertiary-container": "#002617",
+                        "on-tertiary-fixed": "#002113",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-primary-fixed": "#0a1b39",
+                        "on-background": "#0b1c30",
+                        "surface-tint": "#505e80",
+                        "secondary-fixed": "#ffddb8",
+                        "primary-container": "#0f1f3d",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "secondary-container": "#fea619",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-fixed-dim": "#b7c6ed",
+                        "primary": "#00071b",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary": "#855300",
+                        "tertiary-fixed-dim": "#4edea3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden">
+<!-- SideNavBar Integration -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-[#eff4ff] dark:bg-[#0F1F3D] flex flex-col py-8 px-4 font-['Manrope'] antialiased tracking-tight text-sm z-50">
+<div class="mb-10 px-4">
+<h1 class="text-xl font-black text-[#0F1F3D] dark:text-white tracking-tighter">SolarServ Solutions</h1>
+<p class="text-[0.65rem] uppercase tracking-widest text-slate-500 mt-1">Technical Operations</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#0F1F3D] dark:text-white font-bold border-r-4 border-[#F59E0B] bg-[#e5eeff] dark:bg-[#1a2b4d] transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#0F1F3D] dark:hover:text-white hover:bg-[#e5eeff] dark:hover:bg-[#1a2b4d] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span>Map View</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#0F1F3D] dark:hover:text-white hover:bg-[#e5eeff] dark:hover:bg-[#1a2b4d] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="engineering">engineering</span>
+<span>Service Requests</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#0F1F3D] dark:hover:text-white hover:bg-[#e5eeff] dark:hover:bg-[#1a2b4d] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>User Management</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#0F1F3D] dark:hover:text-white hover:bg-[#e5eeff] dark:hover:bg-[#1a2b4d] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+<span>Technician Dispatch</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-slate-200/50 pt-6 space-y-1">
+<div class="px-4 py-2 mb-4">
+<span class="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-secondary-container/10 text-secondary font-bold text-[0.65rem] uppercase tracking-tighter">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    System Status: Optimal
+                </span>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#0F1F3D] dark:hover:text-white hover:bg-[#e5eeff] dark:hover:bg-[#1a2b4d] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-error dark:hover:text-error hover:bg-[#e5eeff] dark:hover:bg-[#1a2b4d] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar Integration -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#f8f9ff]/80 dark:bg-[#0F1F3D]/80 backdrop-blur-xl border-b border-slate-200/20 dark:border-slate-800/20 shadow-sm dark:shadow-none flex justify-between items-center px-8 font-['Manrope']">
+<div class="flex items-center gap-8">
+<span class="text-[0.75rem] font-bold tracking-[0.2em] text-[#0F1F3D] dark:text-white uppercase">Operator Command</span>
+<div class="hidden md:flex items-center bg-surface-container-low px-4 py-1.5 rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-slate-400 text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs w-64 placeholder:text-slate-400" placeholder="Search operations..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="flex gap-6">
+<a class="text-[0.75rem] uppercase tracking-widest font-medium text-[#F59E0B] border-b-2 border-[#F59E0B] pb-1" href="#">Network Health</a>
+<a class="text-[0.75rem] uppercase tracking-widest font-medium text-slate-600 dark:text-slate-300 hover:text-[#F59E0B] transition-colors" href="#">Incident Logs</a>
+</nav>
+<div class="flex items-center gap-4 pl-6 border-l border-slate-200/50">
+<button class="material-symbols-outlined text-slate-500 hover:text-[#0F1F3D] transition-colors" data-icon="notifications">notifications</button>
+<button class="bg-primary-container text-white px-4 py-1.5 rounded-full text-[0.65rem] font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">New Dispatch</button>
+<div class="flex items-center gap-2">
+<img alt="Administrator" class="w-8 h-8 rounded-full bg-surface-container-highest" data-alt="close up professional headshot of a technical operator in a modern control room with soft ambient blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDftvmUnUqa_KdMLlgLmnrPQyhzsE6h1L4-IAet7tXi08rt4Mw8PUftLjSnrMkEUoMZ7SMJSGlH0-G6bDq2npF89UrW3wenf5JvnPWsMijw6WDbzb_Kf7XGhjBPTCklDBDY473HaMqR8c3DgsoeYYmbQwF0Y5R1S8tE3wIIUl1oQ4XOZlfIqV5JVSPFob7fxzvHj8ewfa265_3VsXpus1C0pkLkbv3EZP03Rg4Ukh4R6giY2TqQxr0vUx3wHY5UB6J6KXb8vGZj6Rc"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 p-8 min-h-screen bg-surface">
+<!-- Header Section -->
+<div class="mb-10 max-w-7xl">
+<h2 class="text-4xl font-bold tracking-tight text-primary-container mb-2">KPI Summary</h2>
+<p class="text-slate-500 max-w-2xl text-lg">Comprehensive performance overview of the SolarServ distributed energy network and service ecosystem.</p>
+</div>
+<!-- KPI Grid: Bento Style -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12 max-w-7xl">
+<!-- Card 1: Total Registered Users -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex flex-col justify-between h-48 transition-all hover:bg-surface-container-low group">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-on-primary-fixed-variant opacity-60" data-icon="person">person</span>
+<span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-tertiary-container bg-tertiary-fixed/30 px-2 py-0.5 rounded-full">+12%</span>
+</div>
+<p class="text-[0.75rem] font-medium text-slate-500 uppercase tracking-wider">Total Registered Users</p>
+<h3 class="text-3xl font-extrabold text-primary-container tabular-nums">42,892</h3>
+</div>
+<div class="w-full h-8 flex items-end gap-1">
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-1/2"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-2/3"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-3/4"></div>
+<div class="flex-1 bg-secondary-container rounded-t-sm h-full"></div>
+</div>
+</div>
+<!-- Card 2: Total Solar Assets -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex flex-col justify-between h-48 transition-all hover:bg-surface-container-low">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-on-primary-fixed-variant opacity-60" data-icon="solar_power">solar_power</span>
+<span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-tertiary-container bg-tertiary-fixed/30 px-2 py-0.5 rounded-full">+4.2%</span>
+</div>
+<p class="text-[0.75rem] font-medium text-slate-500 uppercase tracking-wider">Solar Assets Logged</p>
+<h3 class="text-3xl font-extrabold text-primary-container tabular-nums">118,204</h3>
+</div>
+<div class="w-full h-8 flex items-end gap-1">
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-2/3"></div>
+<div class="flex-1 bg-secondary-container rounded-t-sm h-5/6"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-3/4"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-full"></div>
+</div>
+</div>
+<!-- Card 3: Open Service Requests -->
+<div class="bg-primary-container p-6 rounded-xl flex flex-col justify-between h-48 text-white">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="warning">warning</span>
+<span class="text-[0.65rem] font-bold uppercase tracking-widest text-secondary-container bg-white/10 px-2 py-0.5 rounded-full">-2%</span>
+</div>
+<p class="text-[0.75rem] font-medium text-on-primary-container uppercase tracking-wider">Open Service Requests</p>
+<h3 class="text-3xl font-extrabold text-white tabular-nums">1,402</h3>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[65%]"></div>
+</div>
+</div>
+<!-- Card 4: Requests Completed -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex flex-col justify-between h-48 transition-all hover:bg-surface-container-low">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-on-primary-fixed-variant opacity-60" data-icon="check_circle">check_circle</span>
+<span class="text-[0.65rem] font-bold uppercase tracking-widest text-on-tertiary-container bg-tertiary-fixed/30 px-2 py-0.5 rounded-full">+8%</span>
+</div>
+<p class="text-[0.75rem] font-medium text-slate-500 uppercase tracking-wider">Completed This Month</p>
+<h3 class="text-3xl font-extrabold text-primary-container tabular-nums">8,211</h3>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="text-[0.65rem] font-bold text-slate-400">Target Reached</span>
+</div>
+</div>
+<!-- Card 5: Efficiency Score -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 flex flex-col justify-between h-48 transition-all hover:bg-surface-container-low">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-on-primary-fixed-variant opacity-60" data-icon="bolt">bolt</span>
+<span class="text-[0.65rem] font-bold uppercase tracking-widest text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">Stable</span>
+</div>
+<p class="text-[0.75rem] font-medium text-slate-500 uppercase tracking-wider">Avg. Efficiency Score</p>
+<h3 class="text-3xl font-extrabold text-primary-container tabular-nums">94.8<span class="text-lg ml-0.5">%</span></h3>
+</div>
+<div class="w-full flex justify-between items-end">
+<div class="flex gap-0.5">
+<div class="w-1.5 h-4 bg-on-tertiary-container rounded-full"></div>
+<div class="w-1.5 h-6 bg-on-tertiary-container rounded-full"></div>
+<div class="w-1.5 h-5 bg-on-tertiary-container rounded-full"></div>
+<div class="w-1.5 h-8 bg-on-tertiary-container rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Lower Section: Chart and Activity Feed -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl">
+<!-- Monthly Service Volume Chart -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-2xl p-8 relative overflow-hidden group">
+<div class="flex justify-between items-center mb-8 relative z-10">
+<div>
+<h4 class="text-xl font-bold text-primary-container">Service Volume Trend</h4>
+<p class="text-xs text-slate-500 uppercase tracking-widest mt-1">2024 Cumulative Metrics</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-white px-3 py-1 text-[0.65rem] font-bold uppercase rounded-lg border border-outline-variant/20 hover:border-secondary transition-colors">Daily</button>
+<button class="bg-primary-container text-white px-3 py-1 text-[0.65rem] font-bold uppercase rounded-lg">Monthly</button>
+</div>
+</div>
+<div class="flex items-end justify-between h-64 gap-4 relative z-10">
+<div class="flex-1 flex flex-col items-center gap-4">
+<div class="w-full bg-surface-container rounded-xl h-[40%] group-hover:h-[45%] transition-all duration-500"></div>
+<span class="text-[0.65rem] font-bold text-slate-400">JAN</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-4">
+<div class="w-full bg-surface-container rounded-xl h-[55%] group-hover:h-[60%] transition-all duration-500"></div>
+<span class="text-[0.65rem] font-bold text-slate-400">FEB</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-4">
+<div class="w-full bg-surface-container rounded-xl h-[45%] group-hover:h-[50%] transition-all duration-500"></div>
+<span class="text-[0.65rem] font-bold text-slate-400">MAR</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-4">
+<div class="w-full bg-secondary-container rounded-xl h-[85%] group-hover:h-[90%] transition-all duration-500 shadow-xl shadow-secondary/20"></div>
+<span class="text-[0.65rem] font-bold text-primary-container">APR</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-4">
+<div class="w-full bg-surface-container rounded-xl h-[65%] group-hover:h-[70%] transition-all duration-500"></div>
+<span class="text-[0.65rem] font-bold text-slate-400">MAY</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-4">
+<div class="w-full bg-surface-container rounded-xl h-[75%] group-hover:h-[80%] transition-all duration-500"></div>
+<span class="text-[0.65rem] font-bold text-slate-400">JUN</span>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none">
+<span class="material-symbols-outlined text-[12rem]" data-icon="analytics">analytics</span>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="bg-surface-container-highest rounded-2xl p-8">
+<div class="flex justify-between items-center mb-8">
+<h4 class="text-xl font-bold text-primary-container">Live Activity</h4>
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-error"></span>
+</span>
+</div>
+<div class="space-y-6">
+<!-- Activity Item 1 -->
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="bolt">bolt</span>
+</div>
+<div>
+<p class="text-sm text-on-surface font-semibold">Grid spike detected in Sector 4</p>
+<p class="text-[0.65rem] text-slate-500 uppercase tracking-tighter mt-0.5">2 minutes ago • Automated Response</p>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-sm text-primary-container" data-icon="task">task</span>
+</div>
+<div>
+<p class="text-sm text-on-surface font-semibold">Dispatch #8821 Resolved</p>
+<p class="text-[0.65rem] text-slate-500 uppercase tracking-tighter mt-0.5">14 minutes ago • Operator: Miller</p>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-sm text-error" data-icon="emergency">emergency</span>
+</div>
+<div>
+<p class="text-sm text-on-surface font-semibold">Critical Failure: Asset ID-209</p>
+<p class="text-[0.65rem] text-slate-500 uppercase tracking-tighter mt-0.5">45 minutes ago • Emergency Dispatch</p>
+</div>
+</div>
+<!-- Activity Item 4 -->
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container" data-icon="person_add">person_add</span>
+</div>
+<div>
+<p class="text-sm text-on-surface font-semibold">12 New Users Registered</p>
+<p class="text-[0.65rem] text-slate-500 uppercase tracking-tighter mt-0.5">1 hour ago • Marketing Campaign</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 rounded-xl border border-primary-container/10 text-[0.7rem] font-black uppercase tracking-[0.2em] text-primary-container hover:bg-white transition-colors">
+                    View Complete Log
+                </button>
+</div>
+</div>
+</main>
+<!-- Floating Action Element -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="flex items-center gap-3 bg-gradient-to-br from-secondary to-secondary-container text-white px-6 py-4 rounded-full shadow-2xl shadow-secondary/40 hover:scale-105 active:scale-95 transition-all group">
+<span class="material-symbols-outlined font-variation-settings: 'FILL' 1;" data-icon="add_circle">add_circle</span>
+<span class="text-sm font-extrabold uppercase tracking-widest pr-2">Quick Dispatch</span>
+</button>
+</div>
+</body></html>

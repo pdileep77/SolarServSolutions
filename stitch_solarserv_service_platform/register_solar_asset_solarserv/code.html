@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SolarServ | Asset Registration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#384667",
+                        "surface-bright": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-high": "#dce9ff",
+                        "outline": "#75777e",
+                        "on-secondary-container": "#684000",
+                        "on-tertiary-container": "#009b6b",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface-variant": "#45474e",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary": "#000b05",
+                        "on-primary-container": "#7887ab",
+                        "inverse-primary": "#b7c6ed",
+                        "inverse-surface": "#213145",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#0b1c30",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline-variant": "#c5c6ce",
+                        "tertiary-container": "#002617",
+                        "on-tertiary-fixed": "#002113",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-primary-fixed": "#0a1b39",
+                        "on-background": "#0b1c30",
+                        "surface-tint": "#505e80",
+                        "secondary-fixed": "#ffddb8",
+                        "primary-container": "#0f1f3d",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "secondary-container": "#fea619",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-fixed-dim": "#b7c6ed",
+                        "primary": "#00071b",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary": "#855300",
+                        "tertiary-fixed-dim": "#4edea3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container/30">
+<!-- TopAppBar Component -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl shadow-sm flex items-center justify-between px-6 h-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0F1F3D] cursor-pointer" data-icon="arrow_back">arrow_back</span>
+<h1 class="text-lg font-extrabold tracking-[0.05em] uppercase text-[#0F1F3D]">SOLARSERV</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="text-slate-500 font-medium hover:text-[#F59E0B] transition-colors" href="#">Home</a>
+<a class="text-[#F59E0B] font-bold" href="#">Assets</a>
+<a class="text-slate-500 font-medium hover:text-[#F59E0B] transition-colors" href="#">Book</a>
+<a class="text-slate-500 font-medium hover:text-[#F59E0B] transition-colors" href="#">History</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border-2 border-white shadow-sm overflow-hidden">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional male technician in a clean corporate uniform smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA0CHML5Copq2Uv3qq2cTAPBQBQmrUa6YDJ3CGhV08sf0rksqSH3gWh26pyvpFRSoeKcx29f3sR2pdiY1pELHfLDoRu-lFlrqcjEgYbrRnvNKRp_i_Knui34Tzr63CNNeRgquV10rjK1j5bHLHbYm9NLd651luImy4QOnIDoHUA1JEDUdnRdfSqeOleJ1Lif6Vtc4Gh_Z621DsgSZ9Och2DTP207ZXjQrCu9rtfXqnm6R8sL6keEXdA5TvKWmu4xjikIr0RZZr97o"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-12 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+<!-- Guided Flow Header -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="text-secondary font-bold tracking-widest text-xs uppercase mb-2 block">Asset Registration</span>
+<h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-primary-container">Technical Specs</h2>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="text-sm font-semibold text-on-primary-fixed-variant">Step 2 of 4</span>
+<div class="w-48 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="w-1/2 h-full bg-secondary-container"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content: Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Registration Form -->
+<div class="lg:col-span-5 space-y-8">
+<div class="bg-surface-container-low p-8 rounded-[2rem] space-y-6">
+<h3 class="text-xl font-bold text-primary-container border-l-4 border-secondary-container pl-4">System Details</h3>
+<div class="space-y-4">
+<!-- Panel Brand -->
+<div class="relative">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1 ml-1">Panel Brand</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:ring-0 focus:border-secondary-container transition-all py-3 px-4 rounded-xl text-on-surface placeholder:text-outline-variant/60" placeholder="e.g. SunPower, LG, Tesla" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Total Capacity -->
+<div class="relative">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1 ml-1">Capacity (kW)</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:ring-0 focus:border-secondary-container transition-all py-3 px-4 rounded-xl text-on-surface" placeholder="5.4" type="number"/>
+</div>
+<!-- Number of Panels -->
+<div class="relative">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1 ml-1">No. of Panels</label>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:ring-0 focus:border-secondary-container transition-all py-3 px-4 rounded-xl text-on-surface" placeholder="12" type="number"/>
+</div>
+</div>
+<!-- Install Date -->
+<div class="relative">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-1 ml-1">Install Date</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:ring-0 focus:border-secondary-container transition-all py-3 px-4 rounded-xl text-on-surface" type="date"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none" data-icon="calendar_today">calendar_today</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Photo Upload Card -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm border border-surface-container group cursor-pointer hover:bg-surface-container-low transition-all">
+<div class="flex flex-col items-center justify-center border-2 border-dashed border-outline-variant rounded-2xl py-12 px-6 group-hover:border-secondary-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-on-primary-fixed-variant mb-4" data-icon="add_a_photo">add_a_photo</span>
+<p class="text-sm font-bold text-primary-container mb-1">Upload Installation Photo</p>
+<p class="text-xs text-on-surface-variant text-center">Drag and drop or click to browse files (JPG, PNG)</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Map Component -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<div class="relative h-[500px] lg:h-full min-h-[500px] rounded-[2rem] overflow-hidden group shadow-xl">
+<!-- Map Background -->
+<img alt="Satellite view of a residential rooftop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="High resolution aerial satellite view of a modern suburban house rooftop with clean grey shingles surrounded by green lawns" data-location="Austin, Texas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj8qSAOuwsid13HpDkWQE8R2ToiI-P509HYzoxBP4s01YxGvamg6-7ypyZdm3Q1p4C-1UqBKaqGxXwc2MqzawGAWs-vWDZOkZDIySex7_ISgv3VCb3QYXejWksuy0cWNGWvOTe6uYzSqrtPwByZSC9uk5sOaPGcm9KYLIM86N8HdE8f-p17TjM_TDP8ylOEuxsX8GUToYom6465pmbTkRzmubSj8TLA8RFw7665a9_ikVyamj8aeHp925SlY4OCYwbOy0qfxVaugM"/>
+<!-- Map Overlay Glass UI -->
+<div class="absolute inset-0 bg-primary-container/10"></div>
+<!-- Glass Header -->
+<div class="absolute top-6 left-6 right-6 glass-panel p-4 rounded-2xl flex items-center justify-between shadow-lg">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div>
+<p class="text-xs font-bold text-primary-container uppercase tracking-widest">Pin Placement</p>
+<p class="text-sm font-medium text-on-surface-variant">Drag marker to the panel array center</p>
+</div>
+</div>
+<button class="p-2 rounded-xl hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-on-surface" data-icon="my_location">my_location</span>
+</button>
+</div>
+<!-- Draggable Pin Simulation -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="relative flex flex-col items-center">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center shadow-2xl ring-4 ring-white animate-bounce cursor-move">
+<span class="material-symbols-outlined text-white text-2xl" data-icon="solar_power" style="font-variation-settings: 'FILL' 1;">solar_power</span>
+</div>
+<div class="w-4 h-4 bg-secondary-container/40 rounded-full blur-[2px] mt-2"></div>
+</div>
+</div>
+<!-- Map Zoom Controls -->
+<div class="absolute bottom-6 right-6 flex flex-col gap-2">
+<button class="w-10 h-10 glass-panel rounded-xl flex items-center justify-center hover:bg-white transition-colors shadow-md text-primary-container">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="w-10 h-10 glass-panel rounded-xl flex items-center justify-center hover:bg-white transition-colors shadow-md text-primary-container">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+</div>
+</div>
+<!-- Action Button -->
+<div class="flex justify-end gap-4 mt-auto">
+<button class="px-8 py-4 rounded-full bg-surface-container-highest text-primary-container font-bold hover:bg-surface-container transition-all active:scale-95">
+                        Save Draft
+                    </button>
+<button class="px-12 py-4 rounded-full bg-gradient-to-r from-primary-container to-[#1a2b4d] text-white font-bold flex items-center gap-3 shadow-xl hover:shadow-secondary-container/20 transition-all active:scale-95 group">
+<span>Continue</span>
+<span class="material-symbols-outlined text-secondary-container group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-white rounded-t-2xl shadow-[0_-4px_20px_rgba(15,31,61,0.05)] flex justify-around items-center px-2 py-3 pb-safe">
+<div class="flex flex-col items-center justify-center text-slate-400 px-4 py-2">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#F59E0B] bg-[#F59E0B]/10 rounded-xl px-4 py-2">
+<span class="material-symbols-outlined" data-icon="solar_power" style="font-variation-settings: 'FILL' 1;">solar_power</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Assets</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 px-4 py-2">
+<span class="material-symbols-outlined" data-icon="calendar_add_on">calendar_add_on</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Book</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 px-4 py-2">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">History</span>
+</div>
+</nav>
+<!-- Success Toast (Hidden by default, used for interaction visual) -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 glass-panel border border-secondary-container/20 px-6 py-3 rounded-full flex items-center gap-3 shadow-2xl opacity-0 translate-y-4 pointer-events-none transition-all duration-500">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xs" data-icon="check">check</span>
+</div>
+<p class="text-sm font-bold text-primary-container">Location marked successfully</p>
+</div>
+</body></html>

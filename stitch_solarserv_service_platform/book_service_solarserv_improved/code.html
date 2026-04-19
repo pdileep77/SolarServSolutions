@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SOLARSERV | Book Maintenance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#384667",
+                        "surface-bright": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-high": "#dce9ff",
+                        "outline": "#75777e",
+                        "on-secondary-container": "#684000",
+                        "on-tertiary-container": "#009b6b",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface-variant": "#45474e",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary": "#000b05",
+                        "on-primary-container": "#7887ab",
+                        "inverse-primary": "#b7c6ed",
+                        "inverse-surface": "#213145",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#0b1c30",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline-variant": "#c5c6ce",
+                        "tertiary-container": "#002617",
+                        "on-tertiary-fixed": "#002113",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-primary-fixed": "#0a1b39",
+                        "on-background": "#0b1c30",
+                        "surface-tint": "#505e80",
+                        "secondary-fixed": "#ffddb8",
+                        "primary-container": "#0f1f3d",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "secondary-container": "#f59e0b",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-fixed-dim": "#b7c6ed",
+                        "primary": "#00071b",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary": "#855300",
+                        "tertiary-fixed-dim": "#4edea3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-[#F8FAFC] text-on-surface selection:bg-secondary-container/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+<div class="flex items-center justify-between px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0F1F3D] cursor-pointer">menu</span>
+<span class="text-xl font-extrabold tracking-tight uppercase text-[#0F1F3D]">SOLARSERV</span>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 hover:text-[#0F1F3D] font-semibold transition-colors" href="#">Home</a>
+<a class="text-slate-500 hover:text-[#0F1F3D] font-semibold transition-colors" href="#">Assets</a>
+<a class="text-[#F59E0B] font-bold" href="#">Book</a>
+<a class="text-slate-500 hover:text-[#0F1F3D] font-semibold transition-colors" href="#">History</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden ring-2 ring-slate-100">
+<img alt="Profile" data-alt="Close-up portrait of a professional man in a tech environment, soft office lighting, clean aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUekJCij3CB7-WIWBufGNK4JkurJnHDwcckQHqiklFy5gOPk63ZiFx8t-WczJvhh5Z7fp9qifXUs0u6eqt_Amo83M5uIxxyEZV43aGFfhZr7IdH3ch2pr0TJQJKUeco2ITCmRtynXwB2iIe-Le8BOM4ypuyUe1Pi7jv-yxzOA7oUDqcLsybVxcAggDFBU7ebXfMa64cQbjvgzgv73eJGjuPnSBzHFE9r-WQ19oybGZdX0vh12TzNFp9w3sOgpT2ZpaatQ0GKCAtFY"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-28 pb-40 px-6 max-w-7xl mx-auto min-h-screen">
+<!-- Hero Header Section -->
+<section class="mb-16">
+<h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0F1F3D] mb-4">Schedule Maintenance</h1>
+<p class="text-slate-500 text-lg md:text-xl font-medium max-w-2xl">Enhance your solar ecosystem with precision care and expert performance tuning.</p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+<!-- Booking Form Column -->
+<div class="lg:col-span-7 space-y-16">
+<!-- Step 1: Service Selection -->
+<div class="space-y-8">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#0F1F3D] text-white text-xs font-bold">01</span>
+<h2 class="text-sm uppercase tracking-widest font-extrabold text-[#0F1F3D]">Select Service Type</h2>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- Cleaning (Selected State) -->
+<button class="group relative flex items-start gap-5 p-6 rounded-2xl bg-white border-2 border-secondary-container shadow-sm hover:shadow-md transition-all duration-300 text-left">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-secondary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">cleaning_services</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-lg text-primary-container">Cleaning</h3>
+<p class="text-sm text-slate-500 mt-1 leading-relaxed">Remove dust, debris, and grime from panels to maximize absorption.</p>
+</div>
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+</div>
+</button>
+<!-- Inspection -->
+<button class="group relative flex items-start gap-5 p-6 rounded-2xl bg-white border-2 border-slate-100 hover:border-secondary-container/30 hover:shadow-md transition-all duration-300 text-left">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-secondary-container/10">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-secondary-container">troubleshoot</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-lg text-primary-container">Inspection</h3>
+<p class="text-sm text-slate-500 mt-1 leading-relaxed">Deep system diagnostic, thermal imaging, and wiring safety check.</p>
+</div>
+</button>
+<!-- Maintenance -->
+<button class="group relative flex items-start gap-5 p-6 rounded-2xl bg-white border-2 border-slate-100 hover:border-secondary-container/30 hover:shadow-md transition-all duration-300 text-left">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-secondary-container/10">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-secondary-container">build</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-lg text-primary-container">Maintenance</h3>
+<p class="text-sm text-slate-500 mt-1 leading-relaxed">Inverter tuning, firmware updates, and component hardware repair.</p>
+</div>
+</button>
+</div>
+</div>
+<!-- Step 2: Date & Time -->
+<div class="space-y-8">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#0F1F3D] text-white text-xs font-bold">02</span>
+<h2 class="text-sm uppercase tracking-widest font-extrabold text-[#0F1F3D]">Choose Date &amp; Time</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Custom Date Picker Visualization -->
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+<div class="flex items-center justify-between mb-8">
+<span class="font-extrabold text-primary-container">October 2024</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-secondary-container transition-colors">chevron_left</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-secondary-container transition-colors">chevron_right</span>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-slate-400 mb-4 uppercase tracking-tighter">
+<div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center">
+<div class="p-2 text-slate-200">28</div>
+<div class="p-2 text-slate-200">29</div>
+<div class="p-2 text-slate-200">30</div>
+<div class="p-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors">1</div>
+<div class="p-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors">2</div>
+<div class="p-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors">3</div>
+<div class="p-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors">4</div>
+<div class="p-3 text-sm font-extrabold bg-secondary-container text-white rounded-xl cursor-pointer shadow-md shadow-secondary-container/30">5</div>
+<div class="p-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors">6</div>
+<div class="p-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors">7</div>
+<div class="p-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors">8</div>
+<div class="p-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors">9</div>
+<div class="p-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors">10</div>
+<div class="p-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors">11</div>
+<div class="p-3 text-sm font-medium text-slate-600 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors">12</div>
+</div>
+</div>
+<!-- Time Slots Grid -->
+<div class="grid grid-cols-2 gap-3 content-start">
+<button class="py-4 rounded-xl bg-white border border-slate-100 hover:border-secondary-container hover:bg-secondary-container/5 transition-all text-sm font-bold text-slate-700">09:00 AM</button>
+<button class="py-4 rounded-xl bg-white border border-slate-100 hover:border-secondary-container hover:bg-secondary-container/5 transition-all text-sm font-bold text-slate-700">10:30 AM</button>
+<button class="py-4 rounded-xl bg-white border border-slate-100 hover:border-secondary-container hover:bg-secondary-container/5 transition-all text-sm font-bold text-slate-700">12:00 PM</button>
+<button class="py-4 rounded-xl bg-secondary-container text-white border border-secondary-container shadow-lg shadow-secondary-container/20 text-sm font-extrabold">01:30 PM</button>
+<button class="py-4 rounded-xl bg-white border border-slate-100 hover:border-secondary-container hover:bg-secondary-container/5 transition-all text-sm font-bold text-slate-700">03:00 PM</button>
+<button class="py-4 rounded-xl bg-white border border-slate-100 hover:border-secondary-container hover:bg-secondary-container/5 transition-all text-sm font-bold text-slate-700">04:30 PM</button>
+</div>
+</div>
+</div>
+<!-- Step 3: Additional Info -->
+<div class="space-y-8">
+<div class="flex items-center gap-3">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#0F1F3D] text-white text-xs font-bold">03</span>
+<h2 class="text-sm uppercase tracking-widest font-extrabold text-[#0F1F3D]">Additional Notes</h2>
+</div>
+<div class="relative">
+<textarea class="w-full bg-white border-2 border-slate-100 focus:border-secondary-container focus:ring-0 transition-all rounded-2xl p-6 min-h-[140px] text-slate-700 placeholder:text-slate-300" placeholder="Please mention any specific issues, system errors, or access instructions..."></textarea>
+</div>
+</div>
+</div>
+<!-- Summary Column -->
+<aside class="lg:col-span-5">
+<div class="sticky top-24 space-y-6">
+<div class="bg-[#0F1F3D] rounded-[2rem] p-10 text-white shadow-2xl shadow-[#0F1F3D]/10">
+<h3 class="text-2xl font-extrabold mb-10 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container">receipt_long</span>
+                            Booking Summary
+                        </h3>
+<div class="space-y-8">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400 mb-2">Service Selection</p>
+<p class="text-lg font-bold">Panel Cleaning</p>
+</div>
+<span class="text-secondary-container text-xl font-extrabold">$120</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400 mb-2">Scheduled For</p>
+<p class="text-lg font-bold">Oct 05, 2024 at 1:30 PM</p>
+</div>
+</div>
+<div class="pt-8 border-t border-white/10">
+<div class="flex justify-between items-end mb-8">
+<div>
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400 mb-1">Total Estimate</p>
+<p class="text-4xl font-extrabold">$120.00</p>
+</div>
+<div class="text-right">
+<span class="text-[10px] uppercase tracking-widest font-bold text-slate-500">Incl. VAT</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-secondary-container text-lg" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span>Includes full system performance report</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-secondary-container text-lg" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<span>Estimated duration: 2 hours</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Technician Card -->
+<div class="bg-white p-6 rounded-2xl border border-slate-100 flex items-center gap-5 shadow-sm">
+<div class="relative">
+<img alt="Technician" class="w-14 h-14 rounded-2xl object-cover ring-2 ring-slate-50" data-alt="Portrait of a friendly female solar technician wearing a company polo shirt, smiling at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdqfo0z3Et-gqReNvJqLcmkVvJPszPFnMqKr5mLtIWqpG9pWN1zonvgzb0sJ17o5VhXxlfFBa18Wj_ndZkdVB5LBCVRpvEqjhUl-MyVOZwKy6udz0mDq8zEGncbgoLFR_THzZa36dd-hg_WHrebztEhgNNfN-0m7fZGPh-Tlp1QvQpI2ttpwefce0atj-smFQ4oihDqyipcNaoHBi-W3Ioc6pSsv-6F6FS8s9AAxgnt2xJ-tbqXL2j4K0CVJuBV3Q-oZrIQ3Maslc"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
+</div>
+<div>
+<p class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-1">Your Technician</p>
+<p class="font-extrabold text-[#0F1F3D] text-base">Sarah Jenkins</p>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[12px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[11px] font-bold text-slate-600 uppercase">4.9 / 5.0 Rating</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Mobile Fixed Footer -->
+<footer class="fixed bottom-0 w-full z-50 bg-white border-t border-slate-100 px-6 py-6 md:hidden">
+<div class="flex items-center justify-between gap-6">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold tracking-widest text-slate-400">Total Due</span>
+<span class="text-2xl font-extrabold text-[#0F1F3D]">$120.00</span>
+</div>
+<button class="flex-1 bg-secondary-container text-white py-4 px-6 rounded-xl font-extrabold uppercase tracking-widest text-sm shadow-xl shadow-secondary-container/30 active:scale-95 transition-transform duration-200">
+                Confirm Booking
+            </button>
+</div>
+</footer>
+<!-- Desktop Persistent Action -->
+<div class="hidden md:flex fixed bottom-10 right-10 z-50">
+<button class="bg-secondary-container text-white px-12 py-5 rounded-2xl font-extrabold uppercase tracking-[0.15em] text-sm shadow-2xl shadow-secondary-container/40 hover:translate-y-[-4px] active:scale-95 transition-all duration-300 flex items-center gap-4 group">
+<span>Confirm Booking</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Background Elements -->
+<div class="fixed top-1/4 -right-64 w-[600px] h-[600px] bg-secondary-container/5 blur-[120px] rounded-full -z-10"></div>
+<div class="fixed bottom-0 -left-32 w-[500px] h-[500px] bg-[#0F1F3D]/5 blur-[100px] rounded-full -z-10"></div>
+</body></html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Operator Command - Service Requests</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#384667",
+                        "surface-bright": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-high": "#dce9ff",
+                        "outline": "#75777e",
+                        "on-secondary-container": "#684000",
+                        "on-tertiary-container": "#009b6b",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface-variant": "#45474e",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary": "#000b05",
+                        "on-primary-container": "#7887ab",
+                        "inverse-primary": "#b7c6ed",
+                        "inverse-surface": "#213145",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#0b1c30",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline-variant": "#c5c6ce",
+                        "tertiary-container": "#002617",
+                        "on-tertiary-fixed": "#002113",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-primary-fixed": "#0a1b39",
+                        "on-background": "#0b1c30",
+                        "surface-tint": "#505e80",
+                        "secondary-fixed": "#ffddb8",
+                        "primary-container": "#0f1f3d",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "secondary-container": "#fea619",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-fixed-dim": "#b7c6ed",
+                        "primary": "#00071b",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary": "#855300",
+                        "tertiary-fixed-dim": "#4edea3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-[#eff4ff] dark:bg-[#0F1F3D] font-['Manrope'] antialiased tracking-tight text-sm flex flex-col py-8 px-4 z-50">
+<div class="mb-10 px-2">
+<h1 class="text-xl font-black text-[#0F1F3D] dark:text-white tracking-tighter">SolarServ Solutions</h1>
+<p class="text-[0.7rem] uppercase tracking-widest text-on-primary-container mt-1 font-bold">Technical Operations</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#0F1F3D] dark:hover:text-white hover:bg-[#e5eeff] dark:hover:bg-[#1a2b4d] transition-colors duration-200 group active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#0F1F3D] dark:hover:text-white hover:bg-[#e5eeff] dark:hover:bg-[#1a2b4d] transition-colors duration-200 group active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="map">map</span>
+<span>Map View</span>
+</a>
+<a class="flex items-center px-4 py-3 text-[#0F1F3D] dark:text-white font-bold border-r-4 border-[#F59E0B] bg-[#e5eeff] dark:bg-[#1a2b4d] group active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="engineering">engineering</span>
+<span>Service Requests</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#0F1F3D] dark:hover:text-white hover:bg-[#e5eeff] dark:hover:bg-[#1a2b4d] transition-colors duration-200 group active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="group">group</span>
+<span>User Management</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#0F1F3D] dark:hover:text-white hover:bg-[#e5eeff] dark:hover:bg-[#1a2b4d] transition-colors duration-200 group active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="send">send</span>
+<span>Technician Dispatch</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1">
+<div class="px-4 py-2 mb-4 bg-surface-container-highest/30 rounded-xl">
+<p class="text-[0.65rem] uppercase font-bold text-secondary-container">System Status: Optimal</p>
+</div>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#0F1F3D] dark:hover:text-white hover:bg-[#e5eeff] dark:hover:bg-[#1a2b4d] transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-[#0F1F3D] dark:hover:text-white hover:bg-[#e5eeff] dark:hover:bg-[#1a2b4d] transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar Component -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#f8f9ff]/80 dark:bg-[#0F1F3D]/80 backdrop-blur-xl border-b border-slate-200/20 dark:border-slate-800/20 flex justify-between items-center px-8 shadow-sm dark:shadow-none">
+<div class="flex items-center space-x-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg" data-icon="search">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-1.5 text-[0.7rem] tracking-widest font-medium focus:ring-1 focus:ring-secondary w-64 uppercase" placeholder="SEARCH SYSTEM..." type="text"/>
+</div>
+<nav class="flex space-x-6">
+<a class="font-['Manrope'] uppercase tracking-widest text-[0.75rem] font-medium text-slate-600 dark:text-on-primary-container hover:text-[#F59E0B] transition-colors" href="#">Network Health</a>
+<a class="font-['Manrope'] uppercase tracking-widest text-[0.75rem] font-medium text-[#F59E0B] border-b-2 border-[#F59E0B] pb-1" href="#">Incident Logs</a>
+</nav>
+</div>
+<div class="flex items-center space-x-6">
+<button class="bg-gradient-to-r from-primary-container to-[#1a2b4d] text-white px-5 py-2 rounded-xl text-[0.7rem] font-bold tracking-widest uppercase hover:opacity-90 active:opacity-80 transition-all">
+                    New Dispatch
+                </button>
+<div class="flex items-center space-x-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors" data-icon="help_outline">help_outline</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden border border-outline-variant/30">
+<img alt="Administrator" class="w-full h-full object-cover" data-alt="professional portrait of a technical operations administrator in a modern office environment with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1BrVTIWJsHPpiSwO_5BeChmghB8KL-obvDZD0EyEPrM98Bv-Su2OXR01kKO0qgENKuWZbslsH3dM3J0_LwqrdXa-_MmlAuR_5R_sQgiO1_x57Aj1bH01biBpGyl1Nq7pbwmip3tSM4VCZ36_pqrF3HBYCHYJQk1dsxr1nOXEXkpBPW9-vc_erBaDz9MLDQqbvGzG-szki0N4fTwmXF5fBBfMdlmbHGlZbHWjwiANQ2dPOa7jjbdvQBnFTLY-gkfB-30nO2U1Wb6Y"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="pt-24 px-12 pb-12 flex-1">
+<!-- Header Section -->
+<div class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="text-4xl font-extrabold tracking-tight text-primary-container mb-2">Service Requests</h2>
+<p class="text-on-surface-variant max-w-md font-medium">Manage and assign incoming technical maintenance requests across the regional solar grid.</p>
+</div>
+<div class="flex items-center space-x-4">
+<div class="text-right">
+<span class="block text-[0.65rem] uppercase font-bold tracking-widest text-on-primary-container">Total Pending</span>
+<span class="text-2xl font-black text-secondary">24</span>
+</div>
+<div class="h-10 w-px bg-outline-variant/20 mx-4"></div>
+<div class="text-right">
+<span class="block text-[0.65rem] uppercase font-bold tracking-widest text-on-primary-container">Active Dispatches</span>
+<span class="text-2xl font-black text-primary-container">112</span>
+</div>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="bg-surface-container-low rounded-xl p-4 mb-8 flex flex-wrap items-center gap-6 shadow-sm">
+<div class="flex flex-col gap-1.5 min-w-[180px]">
+<label class="text-[0.65rem] uppercase font-bold tracking-widest text-on-primary-container ml-1">Status Filter</label>
+<select class="bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-secondary focus:ring-0 text-sm py-2 rounded-lg">
+<option>All Statuses</option>
+<option>Urgent</option>
+<option>Pending</option>
+<option>In Progress</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5 min-w-[180px]">
+<label class="text-[0.65rem] uppercase font-bold tracking-widest text-on-primary-container ml-1">Service Type</label>
+<select class="bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-secondary focus:ring-0 text-sm py-2 rounded-lg">
+<option>Any Type</option>
+<option>Panel Repair</option>
+<option>Inverter Check</option>
+<option>Routine Clean</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5 min-w-[220px]">
+<label class="text-[0.65rem] uppercase font-bold tracking-widest text-on-primary-container ml-1">Technician Search</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border-none border-b-2 border-outline-variant focus:border-secondary focus:ring-0 text-sm py-2 pl-9 rounded-lg" placeholder="Search by name..." type="text"/>
+</div>
+</div>
+<div class="ml-auto self-end pb-1">
+<button class="flex items-center space-x-2 text-on-primary-container hover:text-secondary transition-colors text-sm font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-lg" data-icon="filter_list">filter_list</span>
+<span>Advanced Filters</span>
+</button>
+</div>
+</div>
+<!-- Data Table Section -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-lg border border-outline-variant/10">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-primary-fixed-variant">
+<th class="px-6 py-4 text-[0.7rem] uppercase tracking-widest font-extrabold">Customer Name</th>
+<th class="px-6 py-4 text-[0.7rem] uppercase tracking-widest font-extrabold">Service Location</th>
+<th class="px-6 py-4 text-[0.7rem] uppercase tracking-widest font-extrabold">Type</th>
+<th class="px-6 py-4 text-[0.7rem] uppercase tracking-widest font-extrabold text-right">Date Requested</th>
+<th class="px-6 py-4 text-[0.7rem] uppercase tracking-widest font-extrabold">Technician</th>
+<th class="px-6 py-4 text-[0.7rem] uppercase tracking-widest font-extrabold">Status</th>
+<th class="px-6 py-4 text-[0.7rem] uppercase tracking-widest font-extrabold text-center">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center text-xs font-bold">AL</div>
+<span class="font-bold text-on-surface">Anders Lindgren</span>
+</div>
+</td>
+<td class="px-6 py-5 text-on-surface-variant text-sm font-medium">482 Stockholm Way, Sector 7</td>
+<td class="px-6 py-5">
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-tight flex items-center w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mr-2"></span>
+                                    Inverter Failure
+                                </span>
+</td>
+<td class="px-6 py-5 text-right font-mono text-xs text-on-surface-variant">24 OCT 2023</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface">Unassigned</td>
+<td class="px-6 py-5">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="text-[0.7rem] font-bold uppercase text-error tracking-widest">Urgent</span>
+</div>
+</td>
+<td class="px-6 py-5 text-center">
+<button class="bg-primary-container text-white px-4 py-1.5 rounded-lg text-[0.7rem] font-bold uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-md">Assign</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-white flex items-center justify-center text-xs font-bold">EM</div>
+<span class="font-bold text-on-surface">Elena Moretti</span>
+</div>
+</td>
+<td class="px-6 py-5 text-on-surface-variant text-sm font-medium">129 Industrial Blvd, Unit 4</td>
+<td class="px-6 py-5">
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-tight flex items-center w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim mr-2"></span>
+                                    Efficiency Audit
+                                </span>
+</td>
+<td class="px-6 py-5 text-right font-mono text-xs text-on-surface-variant">25 OCT 2023</td>
+<td class="px-6 py-5">
+<div class="flex items-center space-x-2">
+<img alt="Marcus Chen" class="w-6 h-6 rounded-full object-cover" data-alt="close-up of a professional male engineer wearing a safety vest and smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvA0EAlzVKLCeIN11g7sZyaSDramTAxFP2EVSf8HNok365PGIzKf7OLxYryfBGKOg6EJc_3iaOjcvIEoveYBpakpGY_UDeXQirExZ4AtBg46RXCCnoiQI8zjSyrHrcLsjyNMvggu4AF6H_whNJcBP6znAQ5IQPr-Ys2KKGvvvxbCAZw3g1clebcbLoSfD1nyoUgwujVpdjVxoCkXWJADANDnETZcIo_lM7D2HrUa2Mk8VTX-XDrzcbR6o8AsizGUn3xClARlhYjoM"/>
+<span class="text-sm font-medium text-on-surface">Marcus Chen</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-blue-400"></span>
+<span class="text-[0.7rem] font-bold uppercase text-on-primary-container tracking-widest">In Progress</span>
+</div>
+</td>
+<td class="px-6 py-5 text-center">
+<button class="text-primary-container px-4 py-1.5 rounded-lg text-[0.7rem] font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-all">Details</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-on-tertiary-container text-white flex items-center justify-center text-xs font-bold">JW</div>
+<span class="font-bold text-on-surface">James Wilson</span>
+</div>
+</td>
+<td class="px-6 py-5 text-on-surface-variant text-sm font-medium">77 Oak Ridge Road</td>
+<td class="px-6 py-5">
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-tight flex items-center w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim mr-2"></span>
+                                    Panel Cleaning
+                                </span>
+</td>
+<td class="px-6 py-5 text-right font-mono text-xs text-on-surface-variant">25 OCT 2023</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface">Unassigned</td>
+<td class="px-6 py-5">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-[0.7rem] font-bold uppercase text-secondary tracking-widest">Pending</span>
+</div>
+</td>
+<td class="px-6 py-5 text-center">
+<button class="bg-primary-container text-white px-4 py-1.5 rounded-lg text-[0.7rem] font-bold uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-md">Assign</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-surface-dim text-primary-container flex items-center justify-center text-xs font-bold">SK</div>
+<span class="font-bold text-on-surface">Sarah Koppel</span>
+</div>
+</td>
+<td class="px-6 py-5 text-on-surface-variant text-sm font-medium">921 Marina Front</td>
+<td class="px-6 py-5">
+<span class="bg-surface-container-highest px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-tight flex items-center w-fit">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-fixed-variant mr-2"></span>
+                                    Expansion Visit
+                                </span>
+</td>
+<td class="px-6 py-5 text-right font-mono text-xs text-on-surface-variant">26 OCT 2023</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface">Unassigned</td>
+<td class="px-6 py-5">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-[0.7rem] font-bold uppercase text-secondary tracking-widest">Pending</span>
+</div>
+</td>
+<td class="px-6 py-5 text-center">
+<button class="bg-primary-container text-white px-4 py-1.5 rounded-lg text-[0.7rem] font-bold uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-md">Assign</button>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="px-6 py-4 bg-surface-container-low flex items-center justify-between">
+<p class="text-xs font-bold text-on-primary-container uppercase tracking-widest">Showing 4 of 24 Pending Requests</p>
+<div class="flex items-center space-x-2">
+<button class="p-2 rounded-lg hover:bg-surface-container transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<span class="px-4 text-xs font-bold">Page 1 of 6</span>
+<button class="p-2 rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual Modal (Simulated Dispatch Drawer) -->
+<div class="fixed inset-0 bg-primary-container/20 backdrop-blur-sm z-50 flex justify-end invisible opacity-0 pointer-events-none">
+<div class="w-1/3 bg-surface-container-lowest h-full shadow-2xl p-8 flex flex-col">
+<div class="flex justify-between items-center mb-10">
+<h3 class="text-2xl font-extrabold tracking-tight">Assign Technician</h3>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<div class="mb-8 p-4 bg-surface-container-low rounded-xl">
+<p class="text-[0.65rem] uppercase font-bold tracking-widest text-on-primary-container mb-2">Selected Request</p>
+<h4 class="font-bold text-lg">Inverter Failure - Anders Lindgren</h4>
+<p class="text-sm text-on-surface-variant mt-1">482 Stockholm Way, Sector 7</p>
+</div>
+<div class="flex-1 overflow-y-auto space-y-4">
+<p class="text-[0.65rem] uppercase font-bold tracking-widest text-on-primary-container">Available Technicians Near Location</p>
+<!-- Tech Card -->
+<div class="p-4 bg-surface-container-lowest border border-outline-variant rounded-xl hover:border-secondary cursor-pointer transition-all flex items-center space-x-4">
+<img alt="David Miller" class="w-12 h-12 rounded-full object-cover" data-alt="headshot of a smiling technician wearing a branded work shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlgpCRPlDJmqkNLWZKHEtj7rZQsiTD96UGoCkp-qqqSluCp8vc0PrwMJXItlun3T5lTKeQC9O-ekO0rnayIiakUBfWrtPHdnqy6YEjPMM1Bs6mtZ7cnuc2M9Dwz5BDovzf3kPRb5WBddZBzY2lE1fWGtYnf4TQb8S4NIK-6LTuiwZErFZPr0kzKIG3y1efXSpaMaFFjjw7fbe3HiE_qBzwJ8AZ3NDi0Vqc27RBKYmQgMU84CIhHUz8i9gd_0_60YEUbfTDDa2ZAg8"/>
+<div class="flex-1">
+<div class="flex justify-between">
+<h5 class="font-bold">David Miller</h5>
+<span class="text-[0.65rem] font-bold text-tertiary-fixed-dim bg-primary-container px-2 py-0.5 rounded uppercase">4.2km away</span>
+</div>
+<p class="text-xs text-on-surface-variant">Specialist: Power Systems</p>
+</div>
+</div>
+<!-- Tech Card -->
+<div class="p-4 bg-surface-container-lowest border border-outline-variant rounded-xl hover:border-secondary cursor-pointer transition-all flex items-center space-x-4">
+<img alt="Sarah Jenkins" class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a focused female solar panel technician" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDnxxnz6zpWl7JZdxMAvK9-7sPejW7JbSp257Bm_9LKJR8e3Q8V_uY0xDydMI8EQN7dYOscpVpjLTFoI14qSihs7W1KDE2ghD9--NJBwNkVqBeLlBrYTi_JsNu2xNFC2b007YuxOVqKaWT7Bg0jIQnkgNfdeSExoinYBJPX71HDQOQabN4ErONeAm2fAfDqFNeDEsdNWk7mgoKvh35htSOWxZF5SSzOSOFLOxmIZg_K5vHuBnPpigxn8KQCASZ6bF2GvGeIskbZi4"/>
+<div class="flex-1">
+<div class="flex justify-between">
+<h5 class="font-bold">Sarah Jenkins</h5>
+<span class="text-[0.65rem] font-bold text-tertiary-fixed-dim bg-primary-container px-2 py-0.5 rounded uppercase">6.8km away</span>
+</div>
+<p class="text-xs text-on-surface-variant">Specialist: Residential Grid</p>
+</div>
+</div>
+</div>
+<div class="pt-8 mt-auto">
+<button class="w-full bg-gradient-to-r from-primary-container to-[#1a2b4d] text-white py-4 rounded-xl text-sm font-bold tracking-widest uppercase shadow-lg hover:opacity-90 active:scale-[0.98] transition-all">
+                    Confirm Dispatch
+                </button>
+</div>
+</div>
+</div>
+</body></html>

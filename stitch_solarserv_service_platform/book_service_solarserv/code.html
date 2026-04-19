@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SOLARSERV | Book Maintenance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#384667",
+                        "surface-bright": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-high": "#dce9ff",
+                        "outline": "#75777e",
+                        "on-secondary-container": "#684000",
+                        "on-tertiary-container": "#009b6b",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface-variant": "#45474e",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary": "#000b05",
+                        "on-primary-container": "#7887ab",
+                        "inverse-primary": "#b7c6ed",
+                        "inverse-surface": "#213145",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#0b1c30",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline-variant": "#c5c6ce",
+                        "tertiary-container": "#002617",
+                        "on-tertiary-fixed": "#002113",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-primary-fixed": "#0a1b39",
+                        "on-background": "#0b1c30",
+                        "surface-tint": "#505e80",
+                        "secondary-fixed": "#ffddb8",
+                        "primary-container": "#0f1f3d",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "secondary-container": "#f59e0b",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-fixed-dim": "#b7c6ed",
+                        "primary": "#00071b",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary": "#855300",
+                        "tertiary-fixed-dim": "#4edea3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl shadow-sm">
+<div class="flex items-center justify-between px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0F1F3D]">menu</span>
+<span class="text-lg font-extrabold tracking-[0.05em] uppercase text-[#0F1F3D]">SOLARSERV</span>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 hover:text-[#F59E0B] font-medium transition-colors" href="#">Home</a>
+<a class="text-slate-500 hover:text-[#F59E0B] font-medium transition-colors" href="#">Assets</a>
+<a class="text-[#F59E0B] font-bold" href="#">Book</a>
+<a class="text-slate-500 hover:text-[#F59E0B] font-medium transition-colors" href="#">History</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Profile" data-alt="Close-up portrait of a professional man in a tech environment, soft office lighting, clean aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUekJCij3CB7-WIWBufGNK4JkurJnHDwcckQHqiklFy5gOPk63ZiFx8t-WczJvhh5Z7fp9qifXUs0u6eqt_Amo83M5uIxxyEZV43aGFfhZr7IdH3ch2pr0TJQJKUeco2ITCmRtynXwB2iIe-Le8BOM4ypuyUe1Pi7jv-yxzOA7oUDqcLsybVxcAggDFBU7ebXfMa64cQbjvgzgv73eJGjuPnSBzHFE9r-WQ19oybGZdX0vh12TzNFp9w3sOgpT2ZpaatQ0GKCAtFY"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto min-h-screen">
+<!-- Hero Header Section -->
+<section class="mb-12">
+<h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-primary-container mb-2">Schedule Maintenance</h1>
+<p class="text-on-primary-container text-lg font-medium">Keep your solar ecosystem performing at peak efficiency.</p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Booking Form Column -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Step 1: Service Selection -->
+<div class="space-y-6">
+<div class="flex items-baseline justify-between">
+<h2 class="text-xs uppercase tracking-widest font-bold text-on-primary-fixed-variant">01. Select Service Type</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<button class="group relative flex flex-col items-start p-6 rounded-xl bg-surface-container-low hover:bg-surface-container-highest transition-all duration-300 text-left overflow-hidden ring-2 ring-secondary-container">
+<span class="material-symbols-outlined mb-4 text-secondary-container" style="font-variation-settings: 'FILL' 1;">cleaning_services</span>
+<h3 class="font-bold text-lg text-primary-container">Cleaning</h3>
+<p class="text-sm text-on-primary-container mt-1">Remove dust, debris, and grime from panels.</p>
+<div class="absolute top-4 right-4">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+</div>
+</button>
+<button class="group relative flex flex-col items-start p-6 rounded-xl bg-surface-container-low hover:bg-surface-container-highest transition-all duration-300 text-left overflow-hidden">
+<span class="material-symbols-outlined mb-4 text-on-primary-container">troubleshoot</span>
+<h3 class="font-bold text-lg text-primary-container">Inspection</h3>
+<p class="text-sm text-on-primary-container mt-1">Deep system diagnostic and wiring check.</p>
+</button>
+<button class="group relative flex flex-col items-start p-6 rounded-xl bg-surface-container-low hover:bg-surface-container-highest transition-all duration-300 text-left overflow-hidden">
+<span class="material-symbols-outlined mb-4 text-on-primary-container">build</span>
+<h3 class="font-bold text-lg text-primary-container">Maintenance</h3>
+<p class="text-sm text-on-primary-container mt-1">Inverter tuning and component hardware repair.</p>
+</button>
+</div>
+</div>
+<!-- Step 2: Date & Time -->
+<div class="space-y-6">
+<h2 class="text-xs uppercase tracking-widest font-bold text-on-primary-fixed-variant">02. Choose Date &amp; Time</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Custom Date Picker Visualization -->
+<div class="bg-surface-container-low p-6 rounded-xl">
+<div class="flex items-center justify-between mb-6">
+<span class="font-bold text-primary-container">October 2024</span>
+<div class="flex gap-2">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-container transition-colors">chevron_left</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-container transition-colors">chevron_right</span>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center text-xs font-bold text-on-primary-container mb-4">
+<div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div><div>S</div>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center">
+<div class="p-2 text-slate-300">28</div>
+<div class="p-2 text-slate-300">29</div>
+<div class="p-2 text-slate-300">30</div>
+<div class="p-2 hover:bg-surface-container rounded-full cursor-pointer transition-colors">1</div>
+<div class="p-2 hover:bg-surface-container rounded-full cursor-pointer transition-colors">2</div>
+<div class="p-2 hover:bg-surface-container rounded-full cursor-pointer transition-colors">3</div>
+<div class="p-2 hover:bg-surface-container rounded-full cursor-pointer transition-colors">4</div>
+<div class="p-2 bg-secondary-container text-white font-bold rounded-full cursor-pointer">5</div>
+<div class="p-2 hover:bg-surface-container rounded-full cursor-pointer transition-colors">6</div>
+<div class="p-2 hover:bg-surface-container rounded-full cursor-pointer transition-colors">7</div>
+<div class="p-2 hover:bg-surface-container rounded-full cursor-pointer transition-colors">8</div>
+<div class="p-2 hover:bg-surface-container rounded-full cursor-pointer transition-colors">9</div>
+<div class="p-2 hover:bg-surface-container rounded-full cursor-pointer transition-colors">10</div>
+<div class="p-2 hover:bg-surface-container rounded-full cursor-pointer transition-colors">11</div>
+<div class="p-2 hover:bg-surface-container rounded-full cursor-pointer transition-colors">12</div>
+<!-- ... truncated for length -->
+</div>
+</div>
+<!-- Time Slots Grid -->
+<div class="grid grid-cols-2 gap-3 content-start">
+<button class="py-4 rounded-xl bg-surface-container-low hover:bg-secondary-container/10 border-2 border-transparent hover:border-secondary-container transition-all text-sm font-semibold text-primary-container">09:00 AM</button>
+<button class="py-4 rounded-xl bg-surface-container-low hover:bg-secondary-container/10 border-2 border-transparent hover:border-secondary-container transition-all text-sm font-semibold text-primary-container">10:30 AM</button>
+<button class="py-4 rounded-xl bg-surface-container-low hover:bg-secondary-container/10 border-2 border-transparent hover:border-secondary-container transition-all text-sm font-semibold text-primary-container">12:00 PM</button>
+<button class="py-4 rounded-xl bg-secondary-container text-white border-2 border-secondary-container transition-all text-sm font-bold shadow-lg shadow-secondary-container/20">01:30 PM</button>
+<button class="py-4 rounded-xl bg-surface-container-low hover:bg-secondary-container/10 border-2 border-transparent hover:border-secondary-container transition-all text-sm font-semibold text-primary-container">03:00 PM</button>
+<button class="py-4 rounded-xl bg-surface-container-low hover:bg-secondary-container/10 border-2 border-transparent hover:border-secondary-container transition-all text-sm font-semibold text-primary-container">04:30 PM</button>
+</div>
+</div>
+</div>
+<!-- Step 3: Additional Info -->
+<div class="space-y-6">
+<h2 class="text-xs uppercase tracking-widest font-bold text-on-primary-fixed-variant">03. Additional Notes</h2>
+<div class="relative group">
+<textarea class="w-full bg-surface-container-low border-none border-b-2 border-outline-variant focus:border-secondary-container focus:ring-0 transition-all rounded-t-xl p-6 min-h-[120px] placeholder:text-on-primary-container/40" placeholder="Please mention any specific issues or access instructions..."></textarea>
+<div class="absolute bottom-0 left-0 w-full h-[2px] bg-outline-variant group-focus-within:bg-secondary-container transition-all"></div>
+</div>
+</div>
+</div>
+<!-- Summary Column -->
+<aside class="lg:col-span-4 h-fit sticky top-24">
+<div class="bg-primary-container rounded-2xl p-8 text-white relative overflow-hidden">
+<!-- Subtle background light effect -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-secondary-container opacity-20 blur-[80px] rounded-full"></div>
+<h3 class="text-xl font-bold mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container">receipt_long</span>
+                        Booking Summary
+                    </h3>
+<div class="space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs uppercase tracking-widest text-on-primary-container mb-1">Service</p>
+<p class="font-bold">Panel Cleaning</p>
+</div>
+<span class="text-secondary-container font-bold">$120</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs uppercase tracking-widest text-on-primary-container mb-1">Date &amp; Time</p>
+<p class="font-bold">Oct 05, 2024 at 1:30 PM</p>
+</div>
+</div>
+<div class="pt-6 border-t border-white/10 flex justify-between items-end">
+<div>
+<p class="text-xs uppercase tracking-widest text-on-primary-container mb-1">Total Estimate</p>
+<p class="text-3xl font-extrabold">$120.00</p>
+</div>
+</div>
+<div class="pt-4 space-y-3">
+<div class="flex items-center gap-3 text-xs text-on-primary-container">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span>Includes performance report</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-on-primary-container">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>2 hours estimated duration</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 bg-surface-container p-6 rounded-2xl flex items-center gap-4">
+<img alt="Technician" class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a friendly female solar technician wearing a company polo shirt, smiling at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdqfo0z3Et-gqReNvJqLcmkVvJPszPFnMqKr5mLtIWqpG9pWN1zonvgzb0sJ17o5VhXxlfFBa18Wj_ndZkdVB5LBCVRpvEqjhUl-MyVOZwKy6udz0mDq8zEGncbgoLFR_THzZa36dd-hg_WHrebztEhgNNfN-0m7fZGPh-Tlp1QvQpI2ttpwefce0atj-smFQ4oihDqyipcNaoHBi-W3Ioc6pSsv-6F6FS8s9AAxgnt2xJ-tbqXL2j4K0CVJuBV3Q-oZrIQ3Maslc"/>
+<div>
+<p class="text-xs font-bold text-on-primary-fixed-variant uppercase tracking-tighter">Your Technician</p>
+<p class="font-bold text-primary-container">Sarah Jenkins</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-bold text-on-primary-container uppercase">4.9 / 5.0 Rating</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Fixed Floating Booking Footer -->
+<footer class="fixed bottom-0 w-full z-50 bg-white/90 backdrop-blur-md px-6 py-6 border-none md:hidden">
+<div class="flex items-center justify-between gap-4">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-primary-container">Estimate</span>
+<span class="text-2xl font-extrabold text-primary-container">$120.00</span>
+</div>
+<button class="flex-1 bg-secondary-container text-white py-4 px-6 rounded-xl font-extrabold uppercase tracking-widest text-sm shadow-xl shadow-secondary-container/20 active:scale-95 transition-transform duration-200">
+                Confirm Booking
+            </button>
+</div>
+</footer>
+<!-- Desktop Persistent Booking Action -->
+<div class="hidden md:flex fixed bottom-8 right-8 z-50">
+<button class="bg-secondary-container text-white px-10 py-5 rounded-full font-extrabold uppercase tracking-widest text-sm shadow-2xl shadow-secondary-container/30 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3">
+<span>Confirm Booking</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- BottomNavBar (Mobile Shell Only) -->
+<nav class="fixed bottom-0 w-full z-40 bg-white md:hidden rounded-t-2xl shadow-[0_-4px_20px_rgba(15,31,61,0.05)] translate-y-full">
+<!-- This would typically be active on other pages, here it is suppressed for focused journey -->
+</nav>
+<!-- Decorative Elements -->
+<div class="fixed top-1/4 -right-64 w-[500px] h-[500px] bg-secondary-container/5 blur-[120px] rounded-full -z-10"></div>
+<div class="fixed bottom-0 -left-32 w-[400px] h-[400px] bg-primary-container/5 blur-[100px] rounded-full -z-10"></div>
+</body></html>

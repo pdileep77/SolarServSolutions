@@ -1,0 +1,105 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  homeowner
+  operator
+  admin
+}
+
+enum ServiceType {
+  cleaning
+  inspection
+  maintenance
+}
+
+enum ServiceStatus {
+  Scheduled
+  InProgress
+  Completed
+  Cancelled
+}
+
+enum AssetType {
+  Residential
+  Commercial
+  Agriculture
+}
+
+enum NotificationType {
+  booking_confirm
+  tech_en_route
+  service_complete
+  reminder
+}
+
+model User {
+  id              String           @id @default(uuid())
+  clerkId         String           @unique
+  name            String
+  email           String           @unique
+  phone           String?
+  address         String?
+  role            Role             @default(homeowner)
+  createdAt       DateTime         @default(now())
+  assets          SolarAsset[]
+  serviceRequests ServiceRequest[]
+  notifications   Notification[]
+}
+
+model SolarAsset {
+  id              String           @id @default(uuid())
+  userId          String
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  panelBrand      String
+  capacityKw      Float
+  panelCount      Int
+  installDate     DateTime
+  photoUrl        String?
+  lat             Float?
+  lng             Float?
+  propertyZone    String?
+  assetType       AssetType        @default(Residential)
+  createdAt       DateTime         @default(now())
+  serviceRequests ServiceRequest[]
+}
+
+model Technician {
+  id                   String           @id @default(uuid())
+  name                 String
+  phone                String?
+  availabilitySchedule Json?
+  assignedZone         String?
+  serviceRequests      ServiceRequest[]
+}
+
+model ServiceRequest {
+  id                   String        @id @default(uuid())
+  assetId              String
+  asset                SolarAsset    @relation(fields: [assetId], references: [id], onDelete: Cascade)
+  userId               String
+  user                 User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  serviceType          ServiceType
+  requestedDatetime    DateTime
+  assignedTechnicianId String?
+  technician           Technician?   @relation(fields: [assignedTechnicianId], references: [id])
+  status               ServiceStatus @default(Scheduled)
+  notes                String?
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+}
+
+model Notification {
+  id        String           @id @default(uuid())
+  userId    String
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      NotificationType
+  message   String
+  readAt    DateTime?
+  createdAt DateTime         @default(now())
+}
